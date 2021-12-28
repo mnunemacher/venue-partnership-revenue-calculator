@@ -8,7 +8,7 @@ export const CalculatorForm = () => {
     const [guestCount, setGuestCount] = React.useState()
     const [bevCost, setBevCost] = React.useState(19)
 
-    const beveragePackages = [19, 21, 25, 28]
+    const beveragePackages = [19, 21, 25, 28, 30, 35]
 
     const handleNumberOfEventsChange = (event) => {
         setNumberOfEvents(event.target.value);
@@ -36,7 +36,7 @@ export const CalculatorForm = () => {
                         <div className="form-item field number required">
                             <label id="eventNumberLabel" className="title" for="eventNumber">
                                 {'Events per Year '}
-                                <span class="required" aria-hidden="true">*</span>
+                                <span className="required" aria-hidden="true">*</span>
                             </label>
                             <div class="description">Enter the average number of events hosted per year</div>
                             <input
@@ -50,32 +50,49 @@ export const CalculatorForm = () => {
                                 aria-required="true"
                             />
                         </div>
-                        <div className="form-item">
-                            <label id="guestCount">
-                                Guest Count
-                                <input
-                                    type="text"
-                                    id="guestCountInput"
-                                    name="guestCount"
-                                    value={guestCount}
-                                    onChange={handleGuestCountChange}
-                                />
+                        <div className="form-item field number required">
+                            <label id="guestCountLabel" className="title" for="guestCount">
+                                {'Guest Count '}
+                                <span className="required" aria-hidden="true">*</span>
                             </label>
+                            <div class="description">Enter the average number of guests per single event</div>
+                            <input
+                                type="text"
+                                className="field-element"
+                                id="guestCountInput"
+                                name="guestCount"
+                                value={guestCount}
+                                onChange={handleGuestCountChange}
+                                spellCheck="false"
+                                aria-required="true"
+                            />
                         </div>
-                        <div className="form-item">
-                            <label id="bevCost">
-                                Beverage Cost per Person
-                                <select
-                                    id="bevCostSelect"
-                                    name="bevCost"
-                                    value={bevCost}
-                                    onChange={handleBevCostChange}
-                                >
-                                    {beveragePackages.map((bp) => <option value={bp}>{bp}</option>)}
-                                </select>
+                        <div className="form-item field select required">
+                            <label id="bevCostLabel" className="title" for="bevCost">
+                                {'Beverage Cost per Person '}
+                                <span className="required" aria-hidden="true">*</span>
                             </label>
+                            <div className="description">
+                                This is a sample of our 4 hour pricing for our different packages. Try out a few to see
+                                your different earnings potentials
+                            </div>
+                            <select
+                                id="bevCostSelect"
+                                name="bevCost"
+                                value={bevCost}
+                                onChange={handleBevCostChange}
+                                aria-required="true"
+                            >
+                                {beveragePackages.map((bp) => <option value={bp}>{bp}</option>)}
+                            </select>
                         </div>
-                        <button type="submit">Calculate</button>
+                        <div className="form-button-wrapper" data-animation-role="button">
+                            <input
+                                className="button sqs-system-button sqs-editable-button sqs-button-element--primary"
+                                type="submit"
+                                value="Calculate"
+                            />
+                        </div>
                     </div>
                 </form>
             </div>
