@@ -15,7 +15,7 @@ export const CalculatorForm = () => {
     const beveragePackages = [19, 21, 25, 28, 30, 35]
 
     React.useEffect(() => {
-        setTotalCommission(totalBevRevenue * CATERING_MARGIN * LIQUOR_STORE_MARGIN)
+        setTotalCommission(totalBarRevenue * CATERING_MARGIN * LIQUOR_STORE_MARGIN)
         setHasTotals(true)
     }, [totalBarRevenue, setTotalCommission, setHasTotals])
 
