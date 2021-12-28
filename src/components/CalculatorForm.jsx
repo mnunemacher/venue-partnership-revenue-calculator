@@ -29,52 +29,56 @@ export const CalculatorForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="calculator-form">
-        <div className="field-list clear">
-            <div className="form-item field number required">
-                <label id="eventNumberLabel" className="title" for="eventNumber">
-                    {'Events per Year '}
-                    <span class="required" aria-hidden="true">*</span>
-                </label>
-                <div class="description">Enter the average number of events hosted per year</div>
-                <input
-                    type="text"
-                    className="field-element"
-                    id="eventNumberInput"
-                    name="eventNumber"
-                    value={numberOfEvents}
-                    onChange={handleNumberOfEventsChange}
-                    spellCheck="false"
-                    aria-required="true"
-                />
+        <div className="form-wrapper">
+            <div className="form-inner-wrapper">
+                <form onSubmit={handleSubmit} className="calculator-form">
+                    <div className="field-list clear">
+                        <div className="form-item field number required">
+                            <label id="eventNumberLabel" className="title" for="eventNumber">
+                                {'Events per Year '}
+                                <span class="required" aria-hidden="true">*</span>
+                            </label>
+                            <div class="description">Enter the average number of events hosted per year</div>
+                            <input
+                                type="text"
+                                className="field-element"
+                                id="eventNumberInput"
+                                name="eventNumber"
+                                value={numberOfEvents}
+                                onChange={handleNumberOfEventsChange}
+                                spellCheck="false"
+                                aria-required="true"
+                            />
+                        </div>
+                        <div className="form-item">
+                            <label id="guestCount">
+                                Guest Count
+                                <input
+                                    type="text"
+                                    id="guestCountInput"
+                                    name="guestCount"
+                                    value={guestCount}
+                                    onChange={handleGuestCountChange}
+                                />
+                            </label>
+                        </div>
+                        <div className="form-item">
+                            <label id="bevCost">
+                                Beverage Cost per Person
+                                <select
+                                    id="bevCostSelect"
+                                    name="bevCost"
+                                    value={bevCost}
+                                    onChange={handleBevCostChange}
+                                >
+                                    {beveragePackages.map((bp) => <option value={bp}>{bp}</option>)}
+                                </select>
+                            </label>
+                        </div>
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
             </div>
-            <div className="form-item">
-                <label id="guestCount">
-                    Guest Count
-                    <input
-                        type="text"
-                        id="guestCountInput"
-                        name="guestCount"
-                        value={guestCount}
-                        onChange={handleGuestCountChange}
-                    />
-                </label>
-            </div>
-            <div className="form-item">
-                <label id="bevCost">
-                    Beverage Cost per Person
-                    <select
-                        id="bevCostSelect"
-                        name="bevCost"
-                        value={bevCost}
-                        onChange={handleBevCostChange}
-                    >
-                        {beveragePackages.map((bp) => <option value={bp}>{bp}</option>)}
-                    </select>
-                </label>
-            </div>
-            <button type="submit">Calculate</button>
         </div>
-        </form>
     )
 }
