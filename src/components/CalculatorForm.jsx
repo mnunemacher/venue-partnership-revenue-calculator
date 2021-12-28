@@ -15,8 +15,10 @@ export const CalculatorForm = () => {
     const beveragePackages = [19, 21, 25, 28, 30, 35]
 
     React.useEffect(() => {
-        setTotalCommission(totalBarRevenue * CATERING_MARGIN * LIQUOR_STORE_MARGIN)
-        setHasTotals(true)
+        if (totalBarRevenue > 0) {
+            setTotalCommission(totalBarRevenue * CATERING_MARGIN * LIQUOR_STORE_MARGIN)
+            setHasTotals(true)
+        }
     }, [totalBarRevenue, setTotalCommission, setHasTotals])
 
     const handleNumberOfEventsChange = (event) => {
@@ -31,9 +33,10 @@ export const CalculatorForm = () => {
         setBevCost(event.target.value);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
         setTotalBarRevenue(numberOfEvents * guestCount * bevCost)
         // see useEffect to update remaining state
+        event.preventDefault()
     }
 
     return (
