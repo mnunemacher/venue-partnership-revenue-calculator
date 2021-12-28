@@ -1,7 +1,7 @@
 import React from "react"
 
-const PERCENT_ONE = 0.65
-const PERCENT_TWO = 0.15
+const CATERING_MARGIN = 0.65
+const LIQUOR_STORE_MARGIN = 0.15
 
 export const CalculatorForm = () => {
     const [numberOfEvents, setNumberOfEvents] = React.useState()
@@ -24,7 +24,7 @@ export const CalculatorForm = () => {
 
     const handleSubmit = () => {
         const totalBevRevenue = numberOfEvents * guestCount * bevCost
-        const totalCommission = totalBevRevenue * PERCENT_ONE * PERCENT_TWO
+        const totalCommission = totalBevRevenue * CATERING_MARGIN * LIQUOR_STORE_MARGIN
         alert(`Your total revenue is $${totalBevRevenue} and your commission is $${totalCommission}`)
     }
 
