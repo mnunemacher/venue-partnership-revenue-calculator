@@ -30,17 +30,23 @@ export const CalculatorForm = () => {
 
     return (
         <form onSubmit={handleSubmit} className="calculator-form">
-            <div className="form-item">
-                <label id="eventNumber">
-                    Events per Year
-                    <input
-                        type="text"
-                        id="eventNumberInput"
-                        name="eventNumber"
-                        value={numberOfEvents}
-                        onChange={handleNumberOfEventsChange}
-                    />
+        <div className="field-list clear">
+            <div className="form-item field number required">
+                <label id="eventNumberLabel" className="title" for="eventNumber">
+                    {'Events per Year '}
+                    <span class="required" aria-hidden="true">*</span>
                 </label>
+                <div class="description">Enter the average number of events hosted per year</div>
+                <input
+                    type="text"
+                    className="field-element"
+                    id="eventNumberInput"
+                    name="eventNumber"
+                    value={numberOfEvents}
+                    onChange={handleNumberOfEventsChange}
+                    spellCheck="false"
+                    aria-required="true"
+                />
             </div>
             <div className="form-item">
                 <label id="guestCount">
@@ -68,6 +74,7 @@ export const CalculatorForm = () => {
                 </label>
             </div>
             <button type="submit">Calculate</button>
+        </div>
         </form>
     )
 }
