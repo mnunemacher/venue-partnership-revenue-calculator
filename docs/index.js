@@ -19,5 +19,5 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./CalculatorForm":"yyK6"}],"lY9v":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("./components/Calculator");function t(){return React.createElement(e.Calculator,null)}var r=t;exports.default=r;
 },{"./components/Calculator":"YOuA"}],"Focm":[function(require,module,exports) {
-"use strict";var e=u(require("react")),t=u(require("react-dom")),r=u(require("./App"));function u(e){return e&&e.__esModule?e:{default:e}}t.default.render(e.default.createElement(e.default.StrictMode,null,e.default.createElement(r.default,null)),document.getElementById("root"));
+"use strict";var e=u(require("react")),r=u(require("react-dom")),t=u(require("./App"));function u(e){return e&&e.__esModule?e:{default:e}}var l=document.querySelectorAll(".vprc_widget");l.forEach(function(u){r.default.render(e.default.createElement(e.default.StrictMode,null,e.default.createElement(t.default,null)),u)});
 },{"react":"n8MK","react-dom":"NKHc","./App":"lY9v"}]},{},["Focm"], null)
