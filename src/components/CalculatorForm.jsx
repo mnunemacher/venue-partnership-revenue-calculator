@@ -175,10 +175,10 @@ export const CalculatorForm = () => {
                         <div className='field-list clear'>
                             <div
                                 className={`form-item field number required${
-                                    errorState.formError && errorState.eventNumber ? ' error' : ''
+                                    errorState.formError && errorState.eventNumber.hasError ? ' error' : ''
                                 }`}
                             >
-                                {errorState.formError && errorState.eventNumber && (
+                                {errorState.formError && errorState.eventNumber.hasError && (
                                     <Error message={errorState.eventNumber.errorMessage} />
                                 )}
                                 <label id='eventNumberLabel' className='title' htmlFor='eventNumber'>
@@ -201,10 +201,10 @@ export const CalculatorForm = () => {
                             </div>
                             <div
                                 className={`form-item field number required${
-                                    errorState.formError && errorState.guestCount ? ' error' : ''
+                                    errorState.formError && errorState.guestCount.hasError ? ' error' : ''
                                 }`}
                             >
-                                {errorState.formError && errorState.guestCount && (
+                                {errorState.formError && errorState.guestCount.hasError && (
                                     <Error message={errorState.guestCount.errorMessage} />
                                 )}
                                 <label id='guestCountLabel' className='title' htmlFor='guestCount'>
@@ -227,10 +227,10 @@ export const CalculatorForm = () => {
                             </div>
                             <div
                                 className={`form-item field select required${
-                                    errorState.formError && errorState.bevCost ? ' error' : ''
+                                    errorState.formError && errorState.bevCost.hasError ? ' error' : ''
                                 }`}
                             >
-                                {errorState.formError && errorState.bevCost && (
+                                {errorState.formError && errorState.bevCost.hasError && (
                                     <Error message={errorState.bevCost.errorMessage} />
                                 )}
                                 <label id='bevCostLabel' className='title' htmlFor='bevCost'>
