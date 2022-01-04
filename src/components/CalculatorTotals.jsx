@@ -12,12 +12,12 @@ export const CalculatorTotals = ({ totalBarRevenue, totalCommission }) => {
     return (
         <div className='sqs-block html-block sqs-block-html'>
             <div className='sqs-block-content'>
-                <p style={{ textAlign: 'center', whiteSpace: 'pre-wrap' }}>
+                <h3 style={{ textAlign: 'center', whiteSpace: 'pre-wrap' }}>
                     {`Total Bar Revenue: ${formatTotal(totalBarRevenue)}`}
-                </p>
-                <p style={{ textAlign: 'center', whiteSpace: 'pre-wrap' }}>
+                </h3>
+                <h3 style={{ textAlign: 'center', whiteSpace: 'pre-wrap' }}>
                     {`Commission: ${formatTotal(totalCommission)}`}
-                </p>
+                </h3>
             </div>
         </div>
     )
